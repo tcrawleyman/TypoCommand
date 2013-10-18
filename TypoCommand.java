@@ -15,7 +15,7 @@ import java.util.Random;
 public class TypoCommand extends Applet implements KeyListener, FocusListener
 {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private int numLetters = 10;  	// This value should be between 1 and 30.
@@ -32,12 +32,13 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
     private char keyFired;			// the last key pressed by the user
 	private boolean focus;			// equals true when you click inside the applet window;
 									// false when you click outside it
-	
+
 	private int score = 0;
 	private int addedScore = 0;
-	
+	private int moo = 0;
+
 	Font scoreFont = new Font("Castellar",Font.BOLD,30);
-	
+
 
 
 
@@ -79,7 +80,7 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 			Grfx.setBackground(gBuffer,Grfx.black);
 
 			Grfx.drawBackgroundStars(gBuffer);
-			
+
 			gBuffer.setFont(scoreFont);
 			gBuffer.drawString("Score: " + score, 100, 100);
 			drawLetters();
@@ -130,13 +131,13 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 				addScore();
 				score += addedScore;
 			}
-			
+
 //			if (!letters[j].isExploding() && letters[j].getLetter() != keyFired)
 //			{
 //				score -= 50;
 //			}
-				
-				
+
+
 			if (letters[j].isBeingTrackedAndShot())
 				letters[j].drawLaser();
 
@@ -163,14 +164,14 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 	{
 		paint(g);
 	}
-	
+
 	public int addScore()
 	{
 		int y = 0;
 		for(int k = 0; k < letters.length; k++){
 			y = letters[k].getLetterY();
 		}
-	
+
 		if(y<=100)
 			addedScore=200;
 		if(y<=200 && y>100)
@@ -183,10 +184,10 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 			addedScore=120;
 		if(y<=600 && y>400)
 			addedScore=100;
-	
+
 		return addedScore;
-	
-	
+
+
 	}
 
 
