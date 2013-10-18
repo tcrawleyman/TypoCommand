@@ -171,20 +171,21 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 		for(int k = 0; k < letters.length; k++){
 			y = letters[k].getLetterY();
 		}
-
-		if(y<=100)
-			addedScore=200;
-		if(y<=200 && y>100)
-		addedScore=180;
-		if(y<=300 && y>200)
-		addedScore = 160;
-		if(y<=400 && y>300)
-			addedScore=140;
-		if(y<=500 && y>400)
-			addedScore=120;
-		if(y<=600 && y>400)
-			addedScore=100;
-
+			if(score <=25000)
+			{
+				if(y<=100)
+					addedScore=200;
+				if(y<=200 && y>100)
+					addedScore=180;
+				if(y<=300 && y>200)
+					addedScore = 160;
+				if(y<=400 && y>300)
+					addedScore=140;
+				if(y<=500 && y>400)
+					addedScore=120;
+				if(y<=600 && y>400)
+					addedScore=100;
+			}
 		return addedScore;
 
 
@@ -236,26 +237,32 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 
 	public void focusLost(FocusEvent evt) 	{ focus = false; }
 
-	public void keyTyped(KeyEvent e, int keyCode) // used for normal characters
+	public void keyTyped(KeyEvent e) // used for normal characters
 	{
 		// The retrieved character is converted to a String, so it can be "up-cased",
 		// and then is converted back into a character.
 		keyFired = String.valueOf(e.getKeyChar()).toUpperCase().charAt(0);
-		System.out.print(keyFired);
+		//System.out.println(keyFired);
 
 		if (keyFired == '0')  // Prevents confusion of letter O and number 0.
 			keyFired = 'O';
-//		if (keyCode == 96)
-//			score = 50000;
+		if (keyFired == '`')
+			score = 50000;
 	}
 
 
 	// This methods are not used, but they are needed because this class "implements" KeyListener.
 	public void keyReleased(KeyEvent e) { }
 
-	public void keyPressed(KeyEvent e, int keyCode)  {
+	public void keyPressed(KeyEvent e)  {
 
 	}  // used for scan codes
+
+
+
+
+
+
 
 
 
