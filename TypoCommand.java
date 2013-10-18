@@ -236,20 +236,34 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 
 	public void focusLost(FocusEvent evt) 	{ focus = false; }
 
-	public void keyTyped(KeyEvent e) // used for normal characters
+	public void keyTyped(KeyEvent e, int keyCode) // used for normal characters
 	{
 		// The retrieved character is converted to a String, so it can be "up-cased",
 		// and then is converted back into a character.
 		keyFired = String.valueOf(e.getKeyChar()).toUpperCase().charAt(0);
-		//System.out.print(keyFired);
+		System.out.print(keyFired);
 
 		if (keyFired == '0')  // Prevents confusion of letter O and number 0.
 			keyFired = 'O';
+//		if (keyCode == 96)
+//			score = 50000;
 	}
 
 
 	// This methods are not used, but they are needed because this class "implements" KeyListener.
 	public void keyReleased(KeyEvent e) { }
 
-	public void keyPressed(KeyEvent e)  { }  // used for scan codes
+	public void keyPressed(KeyEvent e, int keyCode)  {
+
+	}  // used for scan codes
+
+
+
+
+
+
+
+
+
+
 }
