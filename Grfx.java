@@ -182,7 +182,7 @@ public class Grfx
 		Random rand = new Random(12345);
 		int xCoord = 20;
 		int yCoord = 20;
-	    for(int c = 0; c<=25; c++)
+	    for(int c = 0; c<=35; c++)
 	    {
 	    	for(int h = 0; h<=50; h++)
 	    	{
@@ -197,6 +197,39 @@ public class Grfx
 	    	xCoord = 20;
 	    	yCoord +=20;
 	    }
+	}
+	
+	public static void explosionStar(Graphics g,int centerX, int centerY, int radius)
+	{
+		Random rand = new Random();
+		int xCoord = centerX;
+		int yCoord = centerY;
+		int divisibleBy = rand.nextInt(3);
+		if(divisibleBy%3 == 0)
+		{
+		for(int c = 0; c<=25; c++)
+		{
+	    	int c1 = rand.nextInt(255);
+	    	int c2 = rand.nextInt(255);
+	   		int c3 = rand.nextInt(255);
+	    	Color starColor = new Color(c1,c2,c3);
+	    	drawStar(g,5,radius,xCoord,yCoord, starColor);
+	    	radius +=2;
+		}
+
+		} else if(divisibleBy%2 == 0)
+		{
+			for(int c = 0; c<=25; c++)
+			{
+		    	int c1 = rand.nextInt(255);
+		    	int c2 = rand.nextInt(255);
+		   		int c3 = rand.nextInt(255);
+		    	Color starColor = new Color(c1,c2,c3);
+		    	drawStar(g,8,radius,xCoord,yCoord, starColor);
+		    	radius +=2;
+			}
+
+		}
 	}
 
 	/**

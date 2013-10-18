@@ -110,7 +110,7 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 		gBuffer.setColor(Grfx.white);
 		gBuffer.drawString("TYPOCOMMAND 2012",150,150);
 		gBuffer.setFont(directions);
-		gBuffer.drawString("By: John L. M. Schram",320,235);
+		gBuffer.drawString("By: Team YOLO SWAG",320,235);
 
 		gBuffer.drawString("Instructions:",400,400);
 		gBuffer.setFont(footNote);

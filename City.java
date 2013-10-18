@@ -70,10 +70,18 @@ public class City extends GameThing
 			int buildingHeight = buildingBase - height;
 			g.fillRect(lightX-4,buildingHeight,6,height);  // Draws each building in the city.
 		}
+		
+		if(exploding)
+		{
+			explode();
+			alive = false;
+		}
 	}
 
 	public boolean hit(int letterColumn) // Was a city hit by a letter in  particular column?
 	{
+		
+		
 		return 	this.column   == letterColumn ||   // left   column
 		      	this.column+1 == letterColumn ||   // middle column
 				this.column+2 == letterColumn;     // right  column
@@ -83,12 +91,13 @@ public class City extends GameThing
 
 	public void triggerExplosion()
 	{
-		alive = false;
+		exploding = true;
 	}
 
 
 	public void explode()
 	{
+		Grfx.explosionStar(g,xc,yc,2);
 	}
 }
 
