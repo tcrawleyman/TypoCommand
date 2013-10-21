@@ -36,6 +36,8 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 	private int score = 0;
 	private int addedScore = 0;
 	private int moo = 0;
+	
+	private Image cannon;
 
 	Font scoreFont = new Font("Castellar",Font.BOLD,30);
 
@@ -86,6 +88,8 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 			drawLetters();
 			drawCities();
 			laserCan.drawLaserCannon();
+			cannon = getImage(getDocumentBase(),"laser.png");
+			g.drawImage(cannon,300,500,this);
 
 		}
 
@@ -108,7 +112,7 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 
 		gBuffer.setFont(title);
 		gBuffer.setColor(Grfx.white);
-		gBuffer.drawString("TYPOCOMMAND 2012",150,150);
+		gBuffer.drawString("TYPOCOMMAND 2013",150,150);
 		gBuffer.setFont(directions);
 		gBuffer.drawString("By: Team YOLO SWAG",320,235);
 

@@ -8,19 +8,23 @@
 
 import java.awt.*;
 import java.applet.*;
+import java.awt.image.*;
+import java.io.IOException;
 
 
 public class LaserCannon extends GameThing
 {
+	Image cannon;
 	public LaserCannon(Graphics g)  { super(g); }
 
 	public void drawLaserCannon()
 	{
-		g.setColor(Grfx.lightCyan);
-		int start  = 16 * letterSize + centerOffset;
-		int finish = 18 * letterSize + centerOffset - 1;
-		Grfx.fillTriangle(g,laserCanTipX,laserCanTipY,start,appletHeight,finish,appletHeight);
+
+			
+		
 	}
+
+
 
 	// Since I have decided that the LaserCannon will be indestructible
 	// both methods are intentionally redefined with empty method bodies.

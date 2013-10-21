@@ -6,6 +6,7 @@
 
 import java.awt.*;
 import java.applet.*;
+import java.awt.image.*;
 
 abstract public class GameThing
 {
