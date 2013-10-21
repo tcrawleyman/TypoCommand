@@ -18,6 +18,7 @@ public class City extends GameThing
 	private int numLights;  // The number of lights a city has
 	private int seed;       // A random seed used to randomly draw the buildings on each city
 
+	private static int numCity = 98;
 
 	public City(Graphics g, int index)
 	{
@@ -47,9 +48,16 @@ public class City extends GameThing
 
 	public void drawCity()
 	{
-		if (!alive)  // Do not draw the city if it has been destroyed.
+		if (!alive) 
+		{
+			
+		
 			return;
-
+		}
+		if(numCity == 0)
+		{
+			System.out.println("Game Over");
+		}
 		g.setColor(Grfx.orange);
 		Grfx.fillRectangle(g,x1,y1,x2,y2);
 		g.setColor(Grfx.darkGreen);
@@ -71,8 +79,14 @@ public class City extends GameThing
 			g.fillRect(lightX-4,buildingHeight,6,height);  // Draws each building in the city.
 		}
 		
+		for(int j = 0; j<8; j++)
+		{
+			
+		}
+		
 		if(exploding)
 		{
+			
 			explode();
 			alive = false;
 		}
@@ -80,8 +94,7 @@ public class City extends GameThing
 
 	public boolean hit(int letterColumn) // Was a city hit by a letter in  particular column?
 	{
-		
-		
+
 		return 	this.column   == letterColumn ||   // left   column
 		      	this.column+1 == letterColumn ||   // middle column
 				this.column+2 == letterColumn;     // right  column
@@ -91,13 +104,18 @@ public class City extends GameThing
 
 	public void triggerExplosion()
 	{
+
 		exploding = true;
+	
 	}
 
 
 	public void explode()
 	{
+		numCity--;
+		System.out.println(numCity);
 		Grfx.explosionStar(g,xc,yc,2);
+
 	}
 }
 

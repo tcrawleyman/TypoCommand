@@ -232,8 +232,9 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 
 	public void drawCities()
 	{
-		for (int x = 0; x < numCities; x++)
+		for (int x = 0; x < numCities; x++){
 			cities[x].drawCity();
+		}
 	}
 
 
