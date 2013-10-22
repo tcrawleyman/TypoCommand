@@ -89,7 +89,7 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 			drawCities();
 			laserCan.drawLaserCannon();
 			cannon = getImage(getDocumentBase(),"laser.png");
-			g.drawImage(cannon,300,500,this);
+			gBuffer.drawImage(cannon,475,440,this);
 
 		}
 
@@ -219,11 +219,13 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 	private Letter getSpecialLetter()
 	{
 		Letter temp;
-		switch(Grfx.random(1,6))
+		switch(Grfx.random(1,10))
 		{
 			case 1  : temp = new FastLetter(gBuffer); break;
 			case 2  : temp = new VanishingLetter(gBuffer); break;
 			case 3  : temp = new ShrinkingLetter(gBuffer); break;
+			case 4  : temp = new WarpingLetter(gBuffer); break;
+			case 5  : temp = new MorphingLetter(gBuffer); break;
 			default : temp = new Letter(gBuffer);
 		}
 		return temp;

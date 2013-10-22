@@ -67,15 +67,7 @@ public class Letter extends GameThing
 
 		xc = x + centerAmount;
 		yc = y - centerAmount;
-//		int maxR = maxExplodingCount - explodingCountDown;
-//		for (int r = 0; r < maxR; r++)
-//		{
-//		  	if ((r / 5) % 2 == 0)
-//				g.setColor(Grfx.red);
-//			else
-//				g.setColor(Grfx.orange);
-//			Grfx.drawCircle(g, xc, yc, r);    // as it gets bigger.
-//		}
+
 		
 		Grfx.explosionStar(g,xc,yc,2);
 

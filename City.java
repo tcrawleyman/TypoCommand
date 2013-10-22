@@ -17,8 +17,7 @@ public class City extends GameThing
 	private int column;     // The screen is divided into 34 columns.  What column does the city start in?
 	private int numLights;  // The number of lights a city has
 	private int seed;       // A random seed used to randomly draw the buildings on each city
-
-	private static int numCity = 98;
+	int numCity = 0;
 
 	public City(Graphics g, int index)
 	{
@@ -51,13 +50,13 @@ public class City extends GameThing
 		if (!alive) 
 		{
 			
-		
+
 			return;
 		}
-		if(numCity == 0)
-		{
-			System.out.println("Game Over");
-		}
+//		if(numCity == 0)
+//		{
+//			System.out.println("Game Over");
+//		}
 		g.setColor(Grfx.orange);
 		Grfx.fillRectangle(g,x1,y1,x2,y2);
 		g.setColor(Grfx.darkGreen);
@@ -77,6 +76,7 @@ public class City extends GameThing
 			int height = rand.nextInt(20) + 10;
 			int buildingHeight = buildingBase - height;
 			g.fillRect(lightX-4,buildingHeight,6,height);  // Draws each building in the city.
+
 		}
 		
 		for(int j = 0; j<8; j++)
@@ -86,7 +86,7 @@ public class City extends GameThing
 		
 		if(exploding)
 		{
-			
+			numCity++;
 			explode();
 			alive = false;
 		}
@@ -104,6 +104,7 @@ public class City extends GameThing
 
 	public void triggerExplosion()
 	{
+		
 
 		exploding = true;
 	
@@ -112,8 +113,7 @@ public class City extends GameThing
 
 	public void explode()
 	{
-		numCity--;
-		System.out.println(numCity);
+		numCity++;
 		Grfx.explosionStar(g,xc,yc,2);
 
 	}
