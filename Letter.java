@@ -42,10 +42,22 @@ public class Letter extends GameThing
 		letterString = String.valueOf(letter);
 
 		colorNum = Grfx.random(1,9);  // 9 different possible colors for the letter
+		
+		int difficulty = TypoCommand.difficulty();
 
+		if(difficulty == 1)
+		{
 		count = 0;
-		speed = 3;
-
+		speed = 6;
+		} else if(difficulty == 2)
+		{
+			count = 0;
+			speed = 3;
+		} else if(difficulty == 3)
+		{
+			count = 0;
+			speed = 1;
+		}
 		centerAmount = 2*letterSize/5;  // 40% of the size of the letter
 
 		maxExplodingCount  = 30;

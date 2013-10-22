@@ -7,9 +7,6 @@
 
 
 import java.awt.*;
-import java.applet.*;
-import java.awt.image.*;
-import java.io.IOException;
 
 
 public class LaserCannon extends GameThing

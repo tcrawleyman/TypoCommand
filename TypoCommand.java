@@ -9,7 +9,6 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.applet.*;
-import java.util.Random;
 
 
 public class TypoCommand extends Applet implements KeyListener, FocusListener
@@ -26,6 +25,7 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 	private City cities[];			// array of 8 cities
 	private LaserCannon laserCan;	// the 1 laser cannon
 
+	@SuppressWarnings("unused")
 	private Graphics g, gBuffer;	// used for virtual memory/double buffering
     private Image virtualMem;     	// to eliminate flicker in the animation
 
@@ -33,9 +33,9 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 	private boolean focus;			// equals true when you click inside the applet window;
 									// false when you click outside it
 
-	private int score = 0;
+	protected static int score = 0;
 	private int addedScore = 0;
-	private int moo = 0;
+
 	
 	private Image cannon;
 
@@ -149,10 +149,6 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 				score += addedScore;
 			}
 
-//			if (!letters[j].isExploding() && letters[j].getLetter() != keyFired)
-//			{
-//				score -= 50;
-//			}
 
 
 			if (letters[j].isBeingTrackedAndShot())
@@ -249,6 +245,24 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 
 
 	}
+	
+	public static int difficulty()
+	{
+		int difficulty = 1;
+		
+		if(score < 50000)
+		{
+			difficulty = 1;
+		} else if(score < 75000)
+		{
+			difficulty = 2;
+		} else
+		{
+			difficulty = 3;
+		}
+		
+		return difficulty;
+	}
 
 
 	public Letter getNewLetter(int insertIndex, int currentArraySize, Graphics gBuffer)
@@ -319,6 +333,11 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 	public void keyPressed(KeyEvent e)  {
 
 	}  // used for scan codes
+	
+	public int getScore()
+	{
+		return score;
+	}
 
 
 

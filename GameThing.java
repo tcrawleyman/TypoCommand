@@ -5,8 +5,6 @@
 // Several attributes are defined here because there are used in several if not all classes.
 
 import java.awt.*;
-import java.applet.*;
-import java.awt.image.*;
 
 abstract public class GameThing
 {
@@ -62,7 +60,7 @@ abstract public class GameThing
 	 									// Objects explode from their center.
 
 
-
+	
 	// constructor
 
 	public GameThing(Graphics g)
