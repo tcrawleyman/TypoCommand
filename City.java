@@ -17,7 +17,7 @@ public class City extends GameThing
 	private int column;     // The screen is divided into 34 columns.  What column does the city start in?
 	private int numLights;  // The number of lights a city has
 	private int seed;       // A random seed used to randomly draw the buildings on each city
-	int numCity = 0;
+	int numCity = 8;
 
 	public City(Graphics g, int index)
 	{
@@ -86,7 +86,7 @@ public class City extends GameThing
 		
 		if(exploding)
 		{
-			numCity++;
+			numCity--;
 			explode();
 			alive = false;
 		}

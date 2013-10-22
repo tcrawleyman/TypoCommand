@@ -73,7 +73,20 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 	public void paint(Graphics g)
 	{
 		this.g = g;  // allows all methods to access g without passing it as a parameter
-
+		boolean allAlive = false;
+		for(int i=0; i<cities.length;i++)
+		{
+			if(cities[i].isAlive())
+			{
+				allAlive = true;
+				break;
+			}
+			
+		}
+		if(!allAlive)
+		{
+			System.out.println("you are dead");
+		}
 		if (!focus)
 			titleScreen();  // The title screen is shown until the user click in the applet window.
 		else
@@ -189,6 +202,48 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 					addedScore=120;
 				if(y<=600 && y>400)
 					addedScore=100;
+			} else if(score <= 50000)
+			{
+				if(y<=100)
+					addedScore=400;
+				if(y<=200 && y>100)
+					addedScore=380;
+				if(y<=300 && y>200)
+					addedScore = 360;
+				if(y<=400 && y>300)
+					addedScore=340;
+				if(y<=500 && y>400)
+					addedScore=320;
+				if(y<=600 && y>400)
+					addedScore=300;
+			} else if(score <= 75000)
+			{
+				if(y<=100)
+					addedScore=600;
+				if(y<=200 && y>100)
+					addedScore=580;
+				if(y<=300 && y>200)
+					addedScore=560;
+				if(y<=400 && y>300)
+					addedScore=540;
+				if(y<=500 && y>400)
+					addedScore=520;
+				if(y<=600 && y>400)
+					addedScore=500;
+			} else if(score <= 100000)
+			{
+				if(y<=100)
+					addedScore=800;
+				if(y<=200 && y>100)
+					addedScore=780;
+				if(y<=300 && y>200)
+					addedScore=760;
+				if(y<=400 && y>300)
+					addedScore=740;
+				if(y<=500 && y>400)
+					addedScore=720;
+				if(y<=600 && y>400)
+					addedScore=700;
 			}
 		return addedScore;
 
