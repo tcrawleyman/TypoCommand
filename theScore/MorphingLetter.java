@@ -9,9 +9,11 @@ public class MorphingLetter extends Letter
 {
 
 	private int determine;
+	private int determine1;
 	private int amt;
 
 	private int letNum;
+	private int letNum1;
 	
 	public MorphingLetter(Graphics g)
 	{
@@ -28,10 +30,11 @@ public class MorphingLetter extends Letter
 		y = Grfx.random(-30,-1) * 10;   // negative y value allows letter to start above the screen.
 
 		letNum = Grfx.random(1,35);    // 35 possible characters
+		letNum1 = Grfx.random(65,90);
 		if (letNum < 10)
 			letter = (char) (((int) '0') + letNum);  // 9 out of 35 characters are digits
 		else
-		    letter = (char) (Grfx.random(65,90));   // 26 out of 35 characters are letters
+		    letter = (char) (letNum1);   // 26 out of 35 characters are letters
 		letterString = String.valueOf(letter);
 
 
@@ -47,6 +50,7 @@ public class MorphingLetter extends Letter
 		halfExplodingCount = maxExplodingCount / 2;
 		
 		determine = Grfx.random(1,35);
+		determine1 = Grfx.random(65,90);
 		amt = Grfx.random(400,2000);
 		
 	}
@@ -67,7 +71,7 @@ public class MorphingLetter extends Letter
 			if (determine < 10)
 				letter = (char) (((int) '0') + determine);  // 9 out of 35 characters are digits
 			else
-			    letter = (char) (Grfx.random(65,90));
+			    letter = (char) (determine1);
 		letterString = String.valueOf(letter);
 		g.drawString(letterString, x, y);
 		}

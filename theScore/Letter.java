@@ -6,7 +6,6 @@
 package theScore;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 
 public class Letter extends GameThing
@@ -66,7 +65,6 @@ public class Letter extends GameThing
 		halfExplodingCount = maxExplodingCount / 2;
 	}
 
-	ArrayList<City> cityList = new ArrayList<City>();
 	
 	public void triggerExplosion()
 	{

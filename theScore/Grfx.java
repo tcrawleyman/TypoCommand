@@ -3,10 +3,8 @@
 
 package theScore;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.*;
-import java.applet.Applet;
 
 /**
  *

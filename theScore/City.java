@@ -6,7 +6,6 @@
 package theScore;
 
 import java.awt.*;
-import java.applet.*;
 import java.util.Random;
 
 public class City extends GameThing

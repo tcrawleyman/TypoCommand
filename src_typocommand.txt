@@ -1,0 +1,11 @@
+C:\Users\Trevor\Documents\GitHub\TypoCommand\theScore\City.java
+C:\Users\Trevor\Documents\GitHub\TypoCommand\theScore\FastLetter.java
+C:\Users\Trevor\Documents\GitHub\TypoCommand\theScore\GameThing.java
+C:\Users\Trevor\Documents\GitHub\TypoCommand\theScore\Grfx.java
+C:\Users\Trevor\Documents\GitHub\TypoCommand\theScore\LaserCannon.java
+C:\Users\Trevor\Documents\GitHub\TypoCommand\theScore\Letter.java
+C:\Users\Trevor\Documents\GitHub\TypoCommand\theScore\MorphingLetter.java
+C:\Users\Trevor\Documents\GitHub\TypoCommand\theScore\ShrinkingLetter.java
+C:\Users\Trevor\Documents\GitHub\TypoCommand\theScore\TypoCommand.java
+C:\Users\Trevor\Documents\GitHub\TypoCommand\theScore\VanishingLetter.java
+C:\Users\Trevor\Documents\GitHub\TypoCommand\theScore\WarpingLetter.java

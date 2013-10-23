@@ -36,8 +36,10 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 	private boolean focus;			// equals true when you click inside the applet window;
 									// false when you click outside it
 
+	boolean aKeyFired = false;
 	public static int score = 0;
 	private int addedScore = 0;
+	private int failCounter = 0;
 
 	
 	private Image cannon;
@@ -158,8 +160,21 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 				letters[j].triggerExplosion();
 				addScore();
 				score += addedScore;
+				score += 100;
+				failCounter = 0;
+				
 			}
 
+			if(aKeyFired && keyFired != letters[j].getLetter())
+			{
+				score -= 100;
+				aKeyFired = false;
+				failCounter++;
+				System.out.println(failCounter);
+				
+				if(failCounter == 21)
+				score = 0;
+			}
 
 
 			if (letters[j].isBeingTrackedAndShot())
@@ -298,14 +313,24 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 
 	private Letter getSpecialLetter()
 	{
-		Letter temp;
+		Letter temp = new Letter(gBuffer);
 		switch(Grfx.random(1,10))
 		{
-			case 1  : temp = new FastLetter(gBuffer); break;
-			case 2  : temp = new VanishingLetter(gBuffer); break;
-			case 3  : temp = new ShrinkingLetter(gBuffer); break;
-			case 4  : temp = new WarpingLetter(gBuffer); break;
-			case 5  : temp = new MorphingLetter(gBuffer); break;
+			case 1  :
+			if(score>10000)	
+			temp = new FastLetter(gBuffer); break;
+			case 2  :
+			if(score>20000)
+			temp = new VanishingLetter(gBuffer); break;
+			case 3  :
+			if(score>30000)	
+			temp = new ShrinkingLetter(gBuffer); break;
+			case 4  :
+			if(score>40000)	
+			temp = new WarpingLetter(gBuffer); break;
+			case 5  :
+			if(score>50000)	
+			temp = new MorphingLetter(gBuffer); break;
 			default : temp = new Letter(gBuffer);
 		}
 		return temp;
@@ -334,7 +359,8 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 		if (keyFired == '0')  // Prevents confusion of letter O and number 0.
 			keyFired = 'O';
 		if (keyFired == '`')
-			score = 50000;
+			score = 50100;
+		aKeyFired = true;
 	}
 
 
