@@ -5,6 +5,7 @@
 // In that assignment students can improve the appearance of the LaserCannon
 // which right now is nothing more than a triangle.
 
+package theScore;
 
 import java.awt.*;
 

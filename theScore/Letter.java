@@ -3,6 +3,7 @@
 // The Letter attributes now have "protected" access since they will be
 // inherited by various subclasses.
 
+package theScore;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -56,7 +57,7 @@ public class Letter extends GameThing
 		} else if(difficulty == 3)
 		{
 			count = 0;
-			speed = 1;
+			speed = 0;
 		}
 		centerAmount = 2*letterSize/5;  // 40% of the size of the letter
 

@@ -3,6 +3,7 @@
 // Shrinking letters will "shrink" as they fall.
 // They are also the only letters that fall diagonally.
 
+package theScore;
 
 import java.awt.*;
 import java.applet.*;

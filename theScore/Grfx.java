@@ -1,6 +1,7 @@
 // THE Grfx CLASS
 // NOTE: HTML <br> (breaks) are used in the documentation so it will look better in Javadoc.
 
+package theScore;
 
 import javax.swing.*;
 import java.awt.*;

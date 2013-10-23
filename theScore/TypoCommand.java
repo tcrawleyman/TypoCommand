@@ -4,11 +4,12 @@
 // of Letter objects.  These "special" letters are all subclasses of Letter.
 // Polymorphism allows the program to work with very little modification.
 
-
+package theScore;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.applet.*;
+
 
 
 public class TypoCommand extends Applet implements KeyListener, FocusListener
@@ -16,6 +17,8 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 	/**
 	 *
 	 */
+	public static TypoCommand instance;
+	
 	private static final long serialVersionUID = 1L;
 	private int numLetters = 10;  	// This value should be between 1 and 30.
 	private int numCities  =  8;	// This value needs to be 8.
@@ -33,7 +36,7 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 	private boolean focus;			// equals true when you click inside the applet window;
 									// false when you click outside it
 
-	protected static int score = 0;
+	public static int score = 0;
 	private int addedScore = 0;
 
 	
@@ -46,6 +49,7 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 
 	public void init()
 	{
+		instance = this;
 		setSize(1000,650);
   		appletWidth = getWidth();
 		appletHeight = getHeight();
@@ -83,10 +87,10 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 			}
 			
 		}
-		if(!allAlive)
+		if(allAlive)
 		{
-			System.out.println("you are dead");
-		}
+
+		
 		if (!focus)
 			titleScreen();  // The title screen is shown until the user click in the applet window.
 		else
@@ -108,6 +112,13 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 
 		g.drawImage (virtualMem,0,0,this);
 		repaint();  // makes the program repeat
+		} else
+		{
+			Font gameOver = new Font("Magneto",Font.ITALIC,90);
+			g.setFont(gameOver);
+			g.setColor(Color.white);
+			g.drawString("Game Over", 250, 300);
+		}
 	}
 
 
@@ -244,16 +255,16 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 		return addedScore;
 
 
-	}
+	} 
 	
 	public static int difficulty()
 	{
 		int difficulty = 1;
 		
-		if(score < 50000)
+		if(score <= 50000)
 		{
 			difficulty = 1;
-		} else if(score < 75000)
+		} else if(score <= 75000)
 		{
 			difficulty = 2;
 		} else

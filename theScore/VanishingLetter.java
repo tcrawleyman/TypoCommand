@@ -3,6 +3,7 @@
 // A VanishingLetter gets darker and darker until it is invisible,
 // then gets bright again and repeats the process.
 
+package theScore;
 
 import java.awt.*;
 import java.applet.*;

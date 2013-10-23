@@ -3,7 +3,7 @@
 // This file is identical to Stage 4E.
 // It will remain unchanged until students do the Typocommand lab assignment.
 
-
+package theScore;
 
 import java.awt.*;
 import java.applet.*;

@@ -2,6 +2,7 @@
 
 // A FastLetter falls much faster than a normal Letter.
 
+package theScore;
 
 import java.awt.*;
 import java.applet.*;

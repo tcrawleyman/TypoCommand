@@ -4,6 +4,8 @@
 // When doing the lab, do not alter this file.
 // Several attributes are defined here because there are used in several if not all classes.
 
+package theScore;
+
 import java.awt.*;
 
 abstract public class GameThing
