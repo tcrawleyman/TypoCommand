@@ -63,6 +63,10 @@ public class Grfx
 	Random ran1 = new Random();
 	Random ran2 = new Random();
 	Random ran3 = new Random();
+	private static int backgroundCounter = 60;
+	
+	private static int seed = 0;
+
 	
 
 
@@ -178,9 +182,18 @@ public class Grfx
 
 	public static void drawBackgroundStars(Graphics g)
 	{
-		Random rand = new Random(12345);
 		int xCoord = 20;
 		int yCoord = 20;
+		if(backgroundCounter%60 == 0)
+		{
+			seed++;
+		}
+		if(backgroundCounter%2 == 0)
+		{
+			xCoord+=5;
+			yCoord+=5;
+		}	
+		Random rand = new Random(seed);
 	    for(int c = 0; c<=35; c++)
 	    {
 	    	for(int h = 0; h<=50; h++)
@@ -191,11 +204,16 @@ public class Grfx
 	   		int c3 = rand.nextInt(255);
 	    	Color starColor = new Color(c1,c2,c3);
 	    	drawStar(g,5,2,xCoord,yCoord,starColor);
+	    	if(backgroundCounter%2 == 0)
+	    	xCoord+=5;
 	    	xCoord +=20;
 	    	}
 	    	xCoord = 20;
+	    	if(backgroundCounter%2 == 0)
+	    	yCoord +=5;
 	    	yCoord +=20;
 	    }
+	    backgroundCounter++;
 	}
 	
 	public static void explosionStar(Graphics g,int centerX, int centerY, int radius)

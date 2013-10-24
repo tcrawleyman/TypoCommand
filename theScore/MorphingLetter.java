@@ -8,6 +8,7 @@ import java.awt.Graphics;
 public class MorphingLetter extends Letter
 {
 
+	private int letterCounter = 0;
 	private int determine;
 	private int determine1;
 	private int amt;
@@ -29,8 +30,14 @@ public class MorphingLetter extends Letter
 		x = column * letterSize + centerOffset;  // converts column# to x coordinate
 		y = Grfx.random(-30,-1) * 10;   // negative y value allows letter to start above the screen.
 
-		letNum = Grfx.random(1,35);    // 35 possible characters
+		if(letterCounter<=0)
+		{
+		letNum = Grfx.random(1,60);    // 35 possible characters
 		letNum1 = Grfx.random(65,90);
+		determine = Grfx.random(1,60);
+		determine1 = Grfx.random(65,90);
+		letterCounter++;
+		}
 		if (letNum < 10)
 			letter = (char) (((int) '0') + letNum);  // 9 out of 35 characters are digits
 		else
@@ -49,8 +56,7 @@ public class MorphingLetter extends Letter
 		explodingCountDown = maxExplodingCount;
 		halfExplodingCount = maxExplodingCount / 2;
 		
-		determine = Grfx.random(1,35);
-		determine1 = Grfx.random(65,90);
+
 		amt = Grfx.random(400,2000);
 		
 	}

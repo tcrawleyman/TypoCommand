@@ -187,6 +187,7 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 						cities[c].triggerExplosion();
 
 				letters[j] = getNewLetter(j,numLetters,gBuffer);
+				minusScore();
 				// A new letter is created when the old letter hits bottom.
 			}
 
@@ -375,7 +376,11 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 	{
 		return score;
 	}
-
+	
+	public static void minusScore()
+	{
+		score -= 1000;
+	}
 
 
 
