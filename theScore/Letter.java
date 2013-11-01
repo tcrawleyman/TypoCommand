@@ -60,7 +60,7 @@ public class Letter extends GameThing
 		}
 		centerAmount = 2*letterSize/5;  // 40% of the size of the letter
 
-		maxExplodingCount  = 30;
+		maxExplodingCount  = 10;
 		explodingCountDown = maxExplodingCount;
 		halfExplodingCount = maxExplodingCount / 2;
 	}

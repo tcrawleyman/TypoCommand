@@ -1,22 +1,20 @@
-
 package theScore;
 
 import java.awt.Font;
 import java.awt.Graphics;
 
+public class FreeLetter extends Letter {
 
-public class MorphingLetter extends Letter
-{
 
 	private int letterCounter = 0;
 	private int determine;
-	private int determine1;
+//	private int determine1;
 	private int amt;
 
 	private int letNum;
 	private int letNum1;
 	
-	public MorphingLetter(Graphics g)
+	public FreeLetter(Graphics g)
 	{
 		super(g);	
 		
@@ -35,7 +33,7 @@ public class MorphingLetter extends Letter
 		letNum = Grfx.random(1,60);    // 35 possible characters
 		letNum1 = Grfx.random(65,90);
 		determine = Grfx.random(1,60);
-		determine1 = Grfx.random(65,90);
+//		determine1 = Grfx.random(65,90);
 		letterCounter++;
 		}
 		if (letNum < 10)
@@ -75,18 +73,18 @@ public class MorphingLetter extends Letter
 		if(amt <= 0 && amt >=-1000)
 		{
 			if (determine < 10)
-				letter = (char) (((int) '0') + determine);  // 9 out of 35 characters are digits
+				letter = (char) (((int) '0') + Grfx.random(1,60));  // 9 out of 35 characters are digits
 			else
-			    letter = (char) (determine1);
+			    letter = (char) (Grfx.random(65,90));
 		letterString = String.valueOf(letter);
 		g.drawString(letterString, x, y);
 		}
 		else
 		{
 			if (letNum < 10)
-				letter = (char) (((int) '0') + letNum);  // 9 out of 35 characters are digits
+				letter = (char) (((int) '0') + Grfx.random(1,60));  // 9 out of 35 characters are digits
 			else
-			    letter = (char) (letNum1);   // 26 out of 35 characters are letters
+			    letter = (char) (Grfx.random(65,90));   // 26 out of 35 characters are letters
 			letterString = String.valueOf(letter);
 			g.drawString(letterString, x, y);
 		}
@@ -102,3 +100,5 @@ public class MorphingLetter extends Letter
 	
 
 }
+
+

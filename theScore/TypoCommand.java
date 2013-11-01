@@ -315,23 +315,26 @@ public class TypoCommand extends Applet implements KeyListener, FocusListener
 	private Letter getSpecialLetter()
 	{
 		Letter temp = new Letter(gBuffer);
-		switch(Grfx.random(1,10))
+		switch(Grfx.random(4,6))
 		{
 			case 1  :
-			if(score>10000)	
+			if(score>=10000)	
 			temp = new FastLetter(gBuffer); break;
 			case 2  :
-			if(score>20000)
+			if(score>=20000)
 			temp = new VanishingLetter(gBuffer); break;
 			case 3  :
-			if(score>30000)	
+			if(score>=30000)	
 			temp = new ShrinkingLetter(gBuffer); break;
 			case 4  :
-			if(score>40000)	
+			if(score>=40000)	
 			temp = new WarpingLetter(gBuffer); break;
 			case 5  :
-			if(score>50000)	
+			if(score>=50000)
 			temp = new MorphingLetter(gBuffer); break;
+			case 6  : 
+			if(score>60000)
+			temp = new FreeLetter(gBuffer); break;
 			default : temp = new Letter(gBuffer);
 		}
 		return temp;
